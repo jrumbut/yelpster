@@ -1,12 +1,15 @@
+
 class Yelp
   # General-purpose record that allows passing a hash with parameters
   # to populate object attributes defined via methods like
   # +attr_reader+ or +attr_accessor+.
-  #
+  
+  require 'yelpster/configuration'
   class Record
     def initialize (params)
-      
-      defaults = config
+            
+      defaults = Yelp.config
+      defaults = {}
       defaults.each do |key, value| 
         name = key.to_s
         if not params[key].nil?

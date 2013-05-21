@@ -1,6 +1,6 @@
 require 'hash_recursive_merge'
 
-module Yelpster
+
   class ConfigurationHash < Hash
     include HashRecursiveMerge
 
@@ -8,4 +8,3 @@ module Yelpster
       has_key?(meth) ? self[meth] : super
     end
   end
-end

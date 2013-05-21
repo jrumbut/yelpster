@@ -1,12 +1,12 @@
 require 'singleton'
 require 'yelpster/configuration_hash'
 
-module Yelpster
+class Yelp
 
   ##
   # Configuration options should be set by passing a hash:
   #
-  #   Yelpster.configure(
+  #   Yelp.configure(
   #     :yws_id  => 'your_yws_id_here',
   #     ...
   #   )
@@ -59,7 +59,7 @@ module Yelpster
     end
 
     def initialize # :nodoc
-      @data = Yelpster::ConfigurationHash.new
+      @data = ConfigurationHash.new
       set_defaults
     end
 
@@ -72,7 +72,7 @@ module Yelpster
       @data[:token]               = nil # for Yelp API v2
       @data[:token_secret]        = nil # for Yelp API v2
       @data[:compress_response]   = true
-      @data[:response_format]     = Yelp::ResponseFormat::JSON_TO_RUBY
+      @data[:response_format]     = 'JSON_TO_RUBY'
     end
 
     instance_eval(OPTIONS.map do |option|
