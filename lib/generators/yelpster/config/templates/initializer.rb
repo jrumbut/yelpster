@@ -6,4 +6,6 @@ Yelpster.configure(
   # :consumer_secret    => 'your_consumer_secret_here',  # for Yelp API v2
   # :token              => 'your_token_here',            # for Yelp API v2
   # :token_secret       => 'your_token_secret_here'      # for Yelp API v2
+  # :compress_response  => true
+  # :response_format    => Yelp::ResponseFormat::JSON_TO_RUBY
 )

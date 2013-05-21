@@ -34,7 +34,9 @@ module Yelpster
       :consumer_key,
       :consumer_secret_key,
       :token,
-      :token_secret
+      :token_secret,
+      :compress_response,
+      :response_format
     ]
 
     attr_accessor :data
@@ -69,6 +71,8 @@ module Yelpster
       @data[:consumer_secret_key] = nil # for Yelp API v2
       @data[:token]               = nil # for Yelp API v2
       @data[:token_secret]        = nil # for Yelp API v2
+      @data[:compress_response]   = true
+      @data[:response_format]     = Yelp::ResponseFormat::JSON_TO_RUBY
     end
 
     instance_eval(OPTIONS.map do |option|
