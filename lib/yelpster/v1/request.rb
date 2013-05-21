@@ -22,11 +22,8 @@ class Yelp
 		alias :compress_response? :compress_response
 
 		def initialize (params)
-		  default_params = {
-			:compress_response => true,
-			:response_format => Yelp::ResponseFormat::JSON_TO_RUBY
-			}
-		  super(default_params.merge(params))
+      @response_format = Yelp::ResponseFormat::JSON_TO_RUBY
+		  super(params)
 		end
 
 		def to_yelp_params

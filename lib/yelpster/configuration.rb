@@ -72,7 +72,7 @@ class Yelp
       @data[:token]               = nil # for Yelp API v2
       @data[:token_secret]        = nil # for Yelp API v2
       @data[:compress_response]   = true
-      @data[:response_format]     = 'JSON_TO_RUBY'
+      #@data[:response_format]     = 'json_to_ruby' #Yelp::ResponseFormat::JSON_TO_RUBY
     end
 
     instance_eval(OPTIONS.map do |option|

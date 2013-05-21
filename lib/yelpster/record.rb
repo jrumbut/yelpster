@@ -7,9 +7,8 @@ class Yelp
   require 'yelpster/configuration'
   class Record
     def initialize (params)
-            
       defaults = Yelp.config
-      defaults = {}
+      defaults.merge! params
       defaults.each do |key, value| 
         name = key.to_s
         if not params[key].nil?

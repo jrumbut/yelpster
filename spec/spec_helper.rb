@@ -12,20 +12,20 @@ module AdditionalSpecHelpers
 
     case api_ver
     when API_V1
-      ENV['YWSID'].should_not be_nil, "Missing YWSID. Obtain from http://www.yelp.com/developers and set in your shell environment under 'YWSID'."
-      @yws_id = ENV['YWSID']
+      #ENV['YWSID'].should_not be_nil, "Missing YWSID. Obtain from http://www.yelp.com/developers and set in your shell environment under 'YWSID'."
+      @yws_id = 'yAcWBotI8XTuta6AnBEwiQ'
     when API_V2
-      ENV['YELP_CONSUMER_KEY'].should_not be_nil, "Missing YELP_CONSUMER_KEY. Obtain from http://www.yelp.com/developers and set in your shell environment under 'YELP_CONSUMER_KEY'."
-      @consumer_key = ENV['YELP_CONSUMER_KEY']
+      #ENV['YELP_CONSUMER_KEY'].should_not be_nil, "Missing YELP_CONSUMER_KEY. Obtain from http://www.yelp.com/developers and set in your shell environment under 'YELP_CONSUMER_KEY'."
+      @consumer_key = 'hIqZdplmmdN7KMavSk1tVA'
 
-      ENV['YELP_CONSUMER_SECRET'].should_not be_nil, "Missing YELP_CONSUMER_SECRET. Obtain from http://www.yelp.com/developers and set in your shell environment under 'YELP_CONSUMER_SECRET'."
-      @consumer_secret = ENV['YELP_CONSUMER_SECRET']
+      #ENV['YELP_CONSUMER_SECRET'].should_not be_nil, "Missing YELP_CONSUMER_SECRET. Obtain from http://www.yelp.com/developers and set in your shell environment under 'YELP_CONSUMER_SECRET'."
+      @consumer_secret = 'hIqZdplmmdN7KMavSk1tVA'
 
-      ENV['YELP_TOKEN'].should_not be_nil, "Missing YELP_TOKEN. Obtain from http://www.yelp.com/developers and set in your shell environment under 'YELP_TOKEN'."
-      @token = ENV['YELP_TOKEN']
+      #ENV['YELP_TOKEN'].should_not be_nil, "Missing YELP_TOKEN. Obtain from http://www.yelp.com/developers and set in your shell environment under 'YELP_TOKEN'."
+      @token = 'OCTlktblBj2gOfZ9PG211lQxwY8y_OCd'
 
-      ENV['YELP_TOKEN_SECRET'].should_not be_nil, "Missing YELP_TOKEN_SECRET. Obtain from http://www.yelp.com/developers and set in your shell environment under 'YELP_TOKEN_SECRET'."
-      @token_secret = ENV['YELP_TOKEN_SECRET']
+      #ENV['YELP_TOKEN_SECRET'].should_not be_nil, "Missing YELP_TOKEN_SECRET. Obtain from http://www.yelp.com/developers and set in your shell environment under 'YELP_TOKEN_SECRET'."
+      @token_secret = 'GfCrE6X66w-5huarN8ZGjEGLj4E'
     else
       assert_false('No api version specified in test case; cannot continue')
     end

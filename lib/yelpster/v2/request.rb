@@ -11,7 +11,8 @@ class Yelp
 		# one of the Yelp::ResponseFormat format specifiers detailing the
 		# desired format of the search results, defaulting to
 		# Yelp::ResponseFormat::JSON_TO_RUBY.
-		attr_reader :response_format
+		#attr_reader :response_format
+
 
 		# the Yelp consumer_key, consumer_secret, token, token_secret to be passed with the request for
 		# authentication purposes. See http://www.yelp.com/developers/getting_started/api_access
@@ -20,13 +21,17 @@ class Yelp
 		attr_reader :consumer_secret
 		attr_reader :token
 		attr_reader :token_secret
-
+    
 		alias :compress_response? :compress_response
 
 		def initialize (params)
-		  super(default_params.merge(params))
+      @response_format = Yelp::ResponseFormat::JSON_TO_RUBY
+		  super(params)
 		end
-
+    
+    def response_format
+      @response_format
+    end
 		def to_yelp_params
 		  params = {}
 		  
