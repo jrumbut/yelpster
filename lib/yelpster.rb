@@ -1,3 +1,4 @@
+require 'yelpster/configuration'
 require 'yelpster/client'
 require 'yelpster/record'
 require 'yelpster/response_format'

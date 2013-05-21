@@ -24,14 +24,6 @@ class Yelp
 		alias :compress_response? :compress_response
 
 		def initialize (params)
-		  default_params = {
-			:compress_response => true,
-			:response_format => Yelp::ResponseFormat::JSON_TO_RUBY,
-			:consumer_key => ENV['YELP_CONSUMER_KEY'],
-			:consumer_secret => ENV['YELP_CONSUMER_SECRET'],
-			:token => ENV['YELP_TOKEN'],
-			:token_secret => ENV['YELP_TOKEN_SECRET']
-			}
 		  super(default_params.merge(params))
 		end
 

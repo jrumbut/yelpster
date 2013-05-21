@@ -5,11 +5,14 @@ class Yelp
   #
   class Record
     def initialize (params)
-      if !params.nil?
-        params.each do |key, value| 
-          name = key.to_s
-          instance_variable_set("@#{name}", value) if respond_to?(name)
+      
+      defaults = config
+      defaults.each do |key, value| 
+        name = key.to_s
+        if not params[key].nil?
+          value = params[key]
         end
+        instance_variable_set("@#{name}", value) if respond_to?(name)
       end
     end
   end
